@@ -20,6 +20,23 @@ import (
 	"github.com/gorilla/websocket"
 )
 
+const (
+	CloseNormalClosure           = websocket.CloseNormalClosure
+	CloseGoingAway               = websocket.CloseGoingAway
+	CloseProtocolError           = websocket.CloseProtocolError
+	CloseUnsupportedData         = websocket.CloseUnsupportedData
+	CloseNoStatusReceived        = websocket.CloseNoStatusReceived
+	CloseAbnormalClosure         = websocket.CloseAbnormalClosure
+	CloseInvalidFramePayloadData = websocket.CloseInvalidFramePayloadData
+	ClosePolicyViolation         = websocket.ClosePolicyViolation
+	CloseMessageTooBig           = websocket.CloseMessageTooBig
+	CloseMandatoryExtension      = websocket.CloseMandatoryExtension
+	CloseInternalServerErr       = websocket.CloseInternalServerErr
+	CloseServiceRestart          = websocket.CloseServiceRestart
+	CloseTryAgainLater           = websocket.CloseTryAgainLater
+	CloseTLSHandshake            = websocket.CloseTLSHandshake
+)
+
 func IsWebSocketUnexpectedCloseError(err error, expectedCodes ...int) bool {
 	return websocket.IsUnexpectedCloseError(err, expectedCodes...)
 }
